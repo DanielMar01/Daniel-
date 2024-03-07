@@ -1,0 +1,64 @@
+﻿@model WebProductosCore.Models.Producto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Producto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cod_Producto" />
+            <div class="form-group">
+                <label asp-for="Nom_Producto" class="control-label"></label>
+                <input asp-for="Nom_Producto" class="form-control" />
+                <span asp-validation-for="Nom_Producto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_elaboracion" class="control-label"></label>
+                <input asp-for="Fecha_elaboracion" class="form-control" />
+                <span asp-validation-for="Fecha_elaboracion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_caducidad" class="control-label"></label>
+                <input asp-for="Fecha_caducidad" class="form-control" />
+                <span asp-validation-for="Fecha_caducidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodCategoria" class="control-label"></label>
+                <input asp-for="CodCategoria" class="form-control" />
+                <span asp-validation-for="CodCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cod_Proovedor" class="control-label"></label>
+                <input asp-for="Cod_Proovedor" class="form-control" />
+                <span asp-validation-for="Cod_Proovedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
